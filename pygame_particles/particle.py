@@ -1,6 +1,7 @@
 import pygame
 
-from common import random
+from pygame_particles.common import \
+    random, np
 
 class Particle:
     def __init__(self, x, y, radius, color):
@@ -12,6 +13,14 @@ class Particle:
         self.direction_x = random.randint(0, 5)
         self.direction_y = random.randint(0, 5)
     
+    @property
+    def vec(self):
+        return np.array([self.x, self.y])
+    
+    @vec.setter
+    def vec(self, new_vec: np.ndarray):
+        self.x, self.y = new_vec
+
     def draw(self, screen):
         pygame.draw.circle(screen, self.color, (self.x, self.y), self.radius)
     

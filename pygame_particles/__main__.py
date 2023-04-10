@@ -1,7 +1,7 @@
 import pygame
 import random
 
-from engine import PygameParticle
+from pygame_particles.engine import PygameParticle
 
 def run():
     # create pygame surface and draw
@@ -10,7 +10,7 @@ def run():
     screen = pygame.display.set_mode((w, h))
     pygame.display.set_caption('Pygame Particles')
 
-    ppart = PygameParticle(w, h, 50000)
+    ppart = PygameParticle(w, h, 5000)
 
     # run game loop
     running = True

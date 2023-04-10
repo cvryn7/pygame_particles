@@ -1,4 +1,4 @@
-from common import random
+from pygame_particles.common import random
 
 def random_color():
     def rnd_rgb():
